@@ -1,0 +1,30 @@
+.stage {
+	width: 800px;
+	height: 500px;
+}
+.stringaling {
+	position: absolute;
+	width: 3px;
+	top: 15px;
+}
+.noteVal {
+	position: absolute;
+	font-size: 10px;
+	text-align: center;
+	margin-top: 15px;
+	padding: 2px;
+}
+.baseOctave {
+	position: absolute;
+	top: 50px;
+	left: 19px;
+	width: 246px;
+	text-align: center;
+	font-size: 20px;
+	z-index: 1;
+}
+.extraFns {
+	position: absolute;
+	right: 11px;
+	width: 15%;
+}
