@@ -1,49 +1,65 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Interactiveharp : Interactive Harp  jQuery plugin. Educational." />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Interactiveharp</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/zskilz/interactiveHarp">View on GitHub</a>
-
-          <h1 id="project_title">Interactiveharp</h1>
-          <h2 id="project_tagline">Interactive Harp  jQuery plugin. Educational.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/zskilz/interactiveHarp/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/zskilz/interactiveHarp/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>Work in progress...</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Interactiveharp maintained by <a href="https://github.com/zskilz">zskilz</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
     
+    <head>
+        <meta charset='utf-8' />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+        <meta name="description" content="Interactiveharp : Interactive Harp  jQuery plugin. Educational."
+        />
+        <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="src/interactiveHarp.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script src="build/interactiveHarp.min.js"></script>
+        <title>Interactiveharp</title>
+        <script>
+            $(function() {
+                $('#mainStage').interactiveHarp();
+            });
+        </script>
+        <style>
+            #mainStage {
+                position: relative;
+                border : 1px solid black;
+                margin : 3px;
+                padding: 3px;
+            }
+            .legend {
+                position: relative;
+                bottom: 2em;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <!-- HEADER -->
+        <div id="header_wrap" class="outer">
+            <header class="inner">
+                <a id="forkme_banner" href="https://github.com/zskilz/interactiveHarp">View on GitHub</a>
+                <h1 id="project_title">Interactiveharp</h1>
+                <h2 id="project_tagline">Interactive Harp jQuery plugin. Educational.</h2>
+                <section id="downloads">
+                    <a class="zip_download_link" href="https://github.com/zskilz/interactiveHarp/zipball/master">Download this project as a .zip file</a>
+                    <a class="tar_download_link" href="https://github.com/zskilz/interactiveHarp/tarball/master">Download this project as a tar.gz file</a>
+                </section>
+            </header>
+        </div>
+        <!-- MAIN CONTENT -->
+        <div id="main_content_wrap" class="outer">
+            <section id="main_content" class="inner">
+                <div id="mainStage"></div>
+            </section>
+        </div>
+        <!-- FOOTER -->
+        <div id="footer_wrap" class="outer">
+            <footer class="inner">
+                <p class="copyright">Interactiveharp maintained by
+                    <a href="https://github.com/zskilz">zskilz</a>
+                </p>
+                <p>Published with
+                    <a href="http://pages.github.com">GitHub Pages</a>
+                </p>
+            </footer>
+        </div>
+    </body>
 
-  </body>
 </html>
