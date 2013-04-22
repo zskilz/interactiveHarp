@@ -644,7 +644,7 @@ define('audioHelper',{
                     };
                     var extraFns = $('<div/>').addClass('extraFns');
                     var baseNote = $('<div/>').addClass('baseNote').html('Base Note:');
-                    var itterate = btnHelper('itterate', 'Itterate');
+                    var iterate = btnHelper('iterate', 'Iterate');
                     var clear = btnHelper('clear', 'Clear');
                     var drawRef = btnHelper('drawRef', 'Draw L<sub>n</sub>=L<sub>0</sub>.2<sup>n/12</sup>; n=0..31 ("tempered" scale with 32 notes)');
                     var showNoteVals = btnHelper('showNoteVals', 'Draw Note Values');
@@ -655,7 +655,7 @@ define('audioHelper',{
                     var mainStage = $('<div/>').addClass('stage');
 
                     //add to dom
-                    extraFns.append(baseNote, itterate, clear, drawRef, showNoteVals, pentaScale, octaScale, twelveScale, manyScale);
+                    extraFns.append(baseNote, iterate, clear, drawRef, showNoteVals, pentaScale, octaScale, twelveScale, manyScale);
 
                     $this.append(extraFns);
                     $this.append($('<div/>').addClass('legend').html(_opt.legend));
@@ -724,7 +724,7 @@ define('audioHelper',{
 
                     }
 
-                    itterate.click(function() {
+                    iterate.click(function() {
                         itt(A);
 
                     });
@@ -743,7 +743,7 @@ define('audioHelper',{
                     var callItter = function(times) {
                         A = clearAll(A);
                         for (var i = 0; i < times; i++) {
-                            itterate.click();
+                            iterate.click();
                         }
                         showNoteVals.click();
                     }
