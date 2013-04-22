@@ -7,7 +7,6 @@ sub {
     font-size: 80%;
 }
 .stage {
-    position: relative;
     width: 800px;
     height: 500px;
 }
