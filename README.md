@@ -3,7 +3,7 @@ interactiveHarp
 
 A jQuery plugin to add the Interactive Harp component. Educational.
 
-Work in progress...
+Work in progress... See demo here: http://zskilz.github.io/interactiveHarp/
 
 Download build/interactiveHarp.js (or the minified version) and src/interactiveHarp.css. Include them in your page.
 
