@@ -106,10 +106,10 @@
                     var clear = btnHelper('clear', 'Clear');
                     var drawRef = btnHelper('drawRef', 'Draw L<sub>n</sub>=L<sub>0</sub>.2<sup>n/12</sup>; n=0..31 ("tempered" scale with 32 notes)');
                     var showNoteVals = btnHelper('showNoteVals', 'Draw Note Values');
-                    var pentaScale = btnHelper('pentaScale', 'Pentatonic scale (4 itterations)');
-                    var octaScale = btnHelper('octaScale', 'Octatonic scale (6 itterations)');
-                    var twelveScale = btnHelper('twelveScale', 'non-tempered 12-tone scale (11 itterations).');
-                    var manyScale = btnHelper('manyScale', 'many itterations later... (52 itterations).');
+                    var pentaScale = btnHelper('pentaScale', 'Pentatonic scale (4 iterations)');
+                    var octaScale = btnHelper('octaScale', 'Octatonic scale (6 iterations)');
+                    var twelveScale = btnHelper('twelveScale', 'non-tempered 12-tone scale (11 iterations).');
+                    var manyScale = btnHelper('manyScale', 'many iterations later... (52 iterations).');
                     var mainStage = $('<div/>').addClass('stage');
 
                     //add to dom

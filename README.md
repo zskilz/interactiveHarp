@@ -1,5 +1,4 @@
-interactiveHarp
-===============
+=== interactiveHarp
 
 A jQuery plugin to add the Interactive Harp component. Educational.
 
@@ -13,4 +12,14 @@ Download build/interactiveHarp.js (or the minified version) and src/interactiveH
 Calling the plugin:
 
     $('#testDiv').interactiveHarp({});
+    
+== Dev
+
+src/dev.html is the entry point for development/testing. 
             
+== Building.
+
+Almond build scripts are provided in the root. Nodejs required. 
+    
+    node r.js -o build.js
+    node r.js -o build.min.js

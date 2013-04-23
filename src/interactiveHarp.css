@@ -51,4 +51,5 @@
     position: absolute;
     right: 0px;
     width: 19%;
+    z-index: 1;
 }
