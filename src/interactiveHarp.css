@@ -1,28 +1,44 @@
-sup {
-    font-size: 80%;
-    bottom: 0.5em;
+.interactiveHarp {
+    width: 640px;
+    height: 480px;
     position: relative;
+    border : 1px solid black;
+    margin : 3px;
+    padding: 3px;
 }
-sub {
+.interactiveHarp .legend {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+}
+.interactiveHarp sup {
     font-size: 80%;
+    vertical-align:super;
 }
-.stage {
-    width: 800px;
-    height: 500px;
+.interactiveHarp sub {
+    font-size: 80%;
+    vertical-align:sub;
 }
-.stringaling {
+.interactiveHarp .stage {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width:88%;
+    height:99%;
+}
+.interactiveHarp .stringaling {
     position: absolute;
     width: 3px;
     top: 15px;
 }
-.noteVal {
+.interactiveHarp .noteVal {
     position: absolute;
     font-size: 10px;
     text-align: center;
     margin-top: 15px;
     padding: 2px;
 }
-.baseOctave {
+.interactiveHarp .baseOctave {
     position: absolute;
     top: 50px;
     left: 19px;
@@ -31,8 +47,8 @@ sub {
     font-size: 20px;
     z-index: 1;
 }
-.extraFns {
+.interactiveHarp .extraFns {
     position: absolute;
-    right: 11px;
-    width: 15%;
+    right: 0px;
+    width: 19%;
 }
