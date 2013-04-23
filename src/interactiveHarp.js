@@ -54,8 +54,8 @@
             }
             return Ret;
         },
-        calcXPos: function(L, F) {
-            return Math.log(F / L) * 700 / 2 + 20;
+        calcXPos: function(e, L, F) {
+            return Math.log(F / L) * e.width() / 2 ;
         },
         drawSet: function(e, A, F, baseHue, sat, trans) {
             var s = 50,
@@ -67,44 +67,17 @@
                     hue += 360 / 12;
                     hue = hue % 360;
                 }
-                e.append(_m.addStringDiv(_m.calcXPos(V, F), V, 'hsla(' + hue + ',' + s + '%,50%,' + t + ')', F / V));
+                e.append(_m.addStringDiv(_m.calcXPos(e, V, F), V, 'hsla(' + hue + ',' + s + '%,50%,' + t + ')', F / V));
             }
         },
         drawNoteVals: function(e, A, F, currBaseIndex) {
             for (var V, i = 0; V = A[i]; i++) {
 
-                e.append(_m.addNoteDiv(_m.calcXPos(V, F), V, i, currBaseIndex));
+                e.append(_m.addNoteDiv(_m.calcXPos(e, V, F), V, i, currBaseIndex));
 
             }
         },
-        generateToneBuffer: function(sampleRate) {
-            var toneTime = 1.8,
-                n = toneTime * sampleRate,
-                buffer = new Array(n),
-                t, fade, fadeSqr, freq = 110.0;
-            //A2, Concert pitch A4 = 440Hz
 
-            for (var i = 0; i < n; i++) {
-                t = i / sampleRate;
-                fade = (n - i) / n;
-                fadeSqr = fade * fade;
-                //prime harmonics
-                buffer[i] = fade * Math.sin(freq * t * Math.PI * 2);
-                buffer[i] += fadeSqr * Math.sin(freq * 2 * t * Math.PI * 2) / 2;
-                buffer[i] += fadeSqr * fade * Math.sin(freq * 3 * t * Math.PI * 2) / 3;
-                buffer[i] += fadeSqr * fadeSqr * Math.sin(freq * 4 * t * Math.PI * 2) / 4;
-                buffer[i] += fadeSqr * fadeSqr * fade * Math.sin(freq * 5 * t * Math.PI * 2) / 5;
-                buffer[i] += fadeSqr * fadeSqr * fadeSqr * Math.sin(freq * 6 * t * Math.PI * 2) / 6;
-
-            }
-            //attack - smooth out the first bit...
-            var smoothSamples = 164;
-            for (var i = 0; i < smoothSamples; i++) {
-                buffer[i] *= i / smoothSamples;
-            }
-
-            return buffer;
-        },
     };
 
     var methods = {
@@ -122,11 +95,11 @@
                 // If the plugin hasn't been initialized yet
 
                 if (!data) {
-
                     var currBaseIndex = 0;
                     var btnHelper = function(className, content) {
                         return ($('<button/>').addClass(className).html(content));
                     };
+                    var interactiveHarp = $('<div/>').addClass('interactiveHarp');
                     var extraFns = $('<div/>').addClass('extraFns');
                     var baseNote = $('<div/>').addClass('baseNote').html('Base Note:');
                     var iterate = btnHelper('iterate', 'Iterate');
@@ -142,9 +115,12 @@
                     //add to dom
                     extraFns.append(baseNote, iterate, clear, drawRef, showNoteVals, pentaScale, octaScale, twelveScale, manyScale);
 
-                    $this.append(extraFns);
-                    $this.append($('<div/>').addClass('legend').html(_opt.legend));
-                    $this.append(mainStage);
+
+                    interactiveHarp.append(extraFns);
+                    interactiveHarp.append($('<div/>').addClass('legend').html(_opt.legend));
+                    interactiveHarp.append(mainStage);
+
+                    $this.append(interactiveHarp);
 
                     //setup logic
                     // base string length
